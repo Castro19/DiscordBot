@@ -1,3 +1,7 @@
+# from pkg_resources import require
+# require('dotenv').config()
+# ^^^ NEEDED to hide API Token
+from concurrent.futures import process
 import discord # Recieve the libraries from Discord
 import random # Imports randmized Numbers?
 import asyncio
@@ -5,12 +9,10 @@ from discord.ext import commands
 from asyncio import sleep as s
 
 # Specialized Token for this Discord Bot
-TOKEN = 'MTAwMDA5NTUzMzI5NTIxODg1OA.GGrfWD.MRwRPxd_OY-nnTZLVfAWlOObfX49NfrOw7NEVA'
-
+TOKEN = '#BOT TOKEN'
 # Create a Client
 client = discord.Client()
-
-# Create a Client Event
+# Create a Client Event  
 @client.event
 
 # Define event as an Asyc Function ()
@@ -154,4 +156,3 @@ async def reminder(ctx, time: int, *, msg):
         await s(60*time) # Makes this for every minute instead of every hour
         await ctx.send(f'{msg}, {ctx.author.mention}')
 '''     
-
