@@ -1,15 +1,16 @@
 # from pkg_resources import require
 # require('dotenv').config()
 # ^^^ NEEDED to hide API Token
-from concurrent.futures import process
 import discord # Recieve the libraries from Discord
 import random # Imports randmized Numbers?
-import asyncio
-from discord.ext import commands
-from asyncio import sleep as s
-import cred
+from dotenv import load_dotenv
+import os
 
-# Specialized Token for this Discord Bot in our cred.py file, so we can hide our API key
+load_dotenv()
+# environment variables: comp knows w/out initializing variables
+
+# Specialized Token for this Discord Bot
+token = os.getenv('bot_token')
 # Create a Client
 client = discord.Client()
 
@@ -27,7 +28,7 @@ async def on_message(message): #on_message means that we take a message as a par
     channel = str(message.channel.name) # The Channel message was sent on
     print(f'{username}: {user_message} ({channel})')
 
-    # IMPORTANT 
+    # IMPORTANT 0
     if message.author == client.user: # SO we dont get trapped in a never ending Loop
         return
 
@@ -99,6 +100,7 @@ async def on_message(message): #on_message means that we take a message as a par
             await message.channel.send(embed=embed)
             embed.description = "The next meeting for the Active Minds Club is..."
             # file = 
+            # I get a terminal error message bc of the DM. But it doesn't break the bot, so probably fine to ignore
             await message.author.send(embed=embed)
             return
         elif user_message.lower() == '!asg':
@@ -184,23 +186,7 @@ async def on_message(message): #on_message means that we take a message as a par
         file = discord.File("map.pdf")
         await message.author.send(embed=embed, file = file)
 
-''' Welcome to Clovis Community College's Discord Server!\nTo receive instant messages from our Bot please type `!commands` in the servers: clubs, resources, and financial-aid
-@client.command()
-async def message(ctx, user:discord.member, *, message=None):
-    embed = discord.Embed()
-    embed.description = "Welcome to Clovis Community College's Discord Server!\nTo receive instant messages from our Bot please type `!commands` in the servers: clubs, resources, and financial-aid"
-    await user.send(embed=embed)
-    return
-'''
 
-client.run(cred.TOKEN)
 
-''' FIX the Reminder Bot or create a new one
-@client.command()
-async def reminder(ctx, time: int, *, msg):
-    while True:
-        await s(60*time) # Makes this for every minute instead of every hour
-        await ctx.send(f'{msg}, {ctx.author.mention}')
-'''     
-
+client.run(token)
  
