@@ -186,7 +186,5 @@ async def on_message(message): #on_message means that we take a message as a par
         file = discord.File("map.pdf")
         await message.author.send(embed=embed, file = file)
 
-
-
 client.run(token)
  
