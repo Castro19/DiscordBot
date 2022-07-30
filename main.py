@@ -7,9 +7,9 @@ import random # Imports randmized Numbers?
 import asyncio
 from discord.ext import commands
 from asyncio import sleep as s
+import cred
 
-# Specialized Token for this Discord Bot
-TOKEN = 'Bot Token'
+# Specialized Token for this Discord Bot in our cred.py file, so we can hide our API key
 # Create a Client
 client = discord.Client()
 
@@ -193,7 +193,7 @@ async def message(ctx, user:discord.member, *, message=None):
     return
 '''
 
-client.run(TOKEN)
+client.run(cred.TOKEN)
 
 ''' FIX the Reminder Bot or create a new one
 @client.command()
@@ -203,3 +203,4 @@ async def reminder(ctx, time: int, *, msg):
         await ctx.send(f'{msg}, {ctx.author.mention}')
 '''     
 
+ 
