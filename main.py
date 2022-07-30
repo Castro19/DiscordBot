@@ -9,7 +9,7 @@ from discord.ext import commands
 from asyncio import sleep as s
 
 # Specialized Token for this Discord Bot
-TOKEN = 'MTAwMDA5NTUzMzI5NTIxODg1OA.GMYfDf.Geu2xTieXqIPsu0Sru21brQ3Q7c0AOHSvE4zRU'
+TOKEN = 'Bot Token'
 # Create a Client
 client = discord.Client()
 
