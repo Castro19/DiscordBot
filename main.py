@@ -90,7 +90,7 @@ async def on_message(message): #on_message means that we take a message as a par
     if message.channel.name == 'grants':
         if user_message.lower() == '!commands':
             embed = discord.Embed() # makes the message an embed (Looks a lot cleaner)
-            embed.description = '***TYPE:***\n**`!info`** --> *To view information about what Grants are & how they work!*\n\n**`!pell`** --> *To view information about the PELL Grant **(Cash-Grant)** and to see who qualifies!*\n\n**`!cal** --> *To view information about the CalGrant **(Cash-Grant)** and to see who qualifies!*\n\n**`!success`** --> *To view information about the Student Success Completion Grant **(Cash-Grant)** and to see who qualifies!*\n\n`!dates`** --> *To view the upcoming disbursement dates where we send out the grants!*\n\n**`!AB19`** --> *To view information about the AB19 **(Fee-waiver)** and to see who qualifies!*\n\n**`!promise** --> *To view information about the the Promise Grant **(Fee-waiver)** and to see who qualifies!*'
+            embed.description = '***TYPE:***\n**`!info`** --> *To view information about what Grants are & how they work!*\n\n**`!pell`** --> *To view information about the PELL Grant **(Cash-Grant)** and to see who qualifies!*\n\n**`!cal`** --> *To view information about the CalGrant **(Cash-Grant)** and to see who qualifies!*\n\n**`!success`** --> *To view information about the Student Success Completion Grant **(Cash-Grant)** and to see who qualifies!*\n\n**`!dates`** --> *To view the upcoming disbursement dates where we send out the grants!*\n\n**`!AB19`** --> *To view information about the AB19 **(Fee-waiver)** and to see who qualifies!*\n\n**`!promise`** --> *To view information about the the Promise Grant **(Fee-waiver)** and to see who qualifies!*'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!info':
@@ -100,7 +100,7 @@ async def on_message(message): #on_message means that we take a message as a par
             return
         elif user_message.lower() == '!pell':
             embed = discord.Embed() 
-            embed.description = 'The [Pell Grant](https://studentaid.gov/understand-aid/types/grants/pell#how-much-money-can-i-get) is federally awarded based on financial need & can be awarded for up to 6 years!\n\n**How much is the Pell Grant?**\nThe maximum amount for the school year 2022-2023 is $6,895, however the amount you receive will vary depending on if you are a full-time student and your Expected Family Contribution (EFC)\n\n**More Info:**\n - *Full-time (At least 12 units)* --> 100% of the Pell Grant you are eligible for\n - *Three-Quarter-time (9 - 11.5 units)* --> 750% of the Pell Grant you are eligible for\n - *Half-time (6 - 8.5)* --> 50% of the Pell Grant you are eligible for\n - *Less than Half-time (3 - 5.5)* --> 25% of the Pell Grant you are eligible for'
+            embed.description = 'The [Pell Grant](https://studentaid.gov/understand-aid/types/grants/pell#how-much-money-can-i-get) is federally awarded based on financial need & can be awarded for up to 6 years!\n\n**How much is the Pell Grant?**\nThe maximum amount for the school year 2022-2023 is $6,895, however the amount you receive will vary depending on if you are a full-time student and your Expected Family Contribution (EFC)\n\n**More Info:**\n - *Full-time (At least 12 units)* --> 100% of the Pell Grant you are eligible for\n - *Three-Quarter-time (9 - 11.5 units)* --> 75% of the Pell Grant you are eligible for\n - *Half-time (6 - 8.5)* --> 50% of the Pell Grant you are eligible for\n - *Less than Half-time (3 - 5.5)* --> 25% of the Pell Grant you are eligible for'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!cal':
@@ -118,7 +118,7 @@ async def on_message(message): #on_message means that we take a message as a par
             embed.description = 'The [Disbursement Date Calendar](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/financial-aid-disbursement-dates.html) details when you should be receiving your financial aid check.\n\nStudents who have filed their FAFSA and qualify for the Pell Grant will be receiving the first half of their grant on 08/04/22.\nIf you did not receive a grant on this date, then you either did not qualify for the Pell Grant or you your file is incomplete at the Financial Aid Office.\n\n The second disbursement will be the second half of the grant (same amount as the first) and will be disbursed on 10/06/22!'
             await message.channel.send(embed=embed)     
             return 
-        elif user_message.lower() == '!AB19':
+        elif user_message.lower() == '!ab19':
             embed = discord.Embed() 
             embed.description = 'The [AB19 Fee-Waiver](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/financial-aid-disbursement-dates.html) allows first-time college students who are Califormoa residents to pursue two years of college for FREE! Regardless of the Income in the household, any new student can qualify!\nThe student must have the FAFSA already submitted, and the student needs to also be full-time which is at least 12 units.'
             await message.channel.send(embed=embed)     
