@@ -34,11 +34,16 @@ async def on_message(message): #on_message means that we take a message as a par
 
     # Just TESTING
     if message.channel.name == 'testing': # If the message was sent in the channel: Testing
-        if user_message.lower() == 'hello': 
+        if user_message.lower() == '!commands':
+            embed = discord.Embed() # makes the message an embed (Looks a lot cleaner)
+            embed.description = '***TYPE:***\n**`!hello`** \n\n**`!bye`** \n\n`**!random**` --> *To receive a random automated number!*'
+            await message.channel.send(embed=embed)     
+            return 
+        if user_message.lower() == '!hello': 
             # This format just sends a regular message
             await message.channel.send(f'Hello {username}!')
             return
-        elif user_message.lower() == 'bye':
+        elif user_message.lower() == '!bye':
             await message.channel.send(f'See you later {username}!')
             return
         elif user_message.lower() == '!random':
@@ -50,7 +55,7 @@ async def on_message(message): #on_message means that we take a message as a par
     if message.channel.name == 'financial-aid':
         if user_message.lower() == '!commands':
             embed = discord.Embed() # makes the message an embed (Looks a lot cleaner)
-            embed.description = '***TYPE:***\n**`!fafsa`** --> *To view basic information about the FAFSA*\n\n**`!howToFafsa`** --> *To view a step by step guide on how to submit the FAFSA!*\n\n**`!scholarships`** --> *To view a list of available scholarships*\n\n**`!help`** --> *Please contact the Financial Aid Office if you have any questions regarding your financial aid status!*\n\n**`!info`** --> *To view basic information on how financial aid can cover your tuition costs and send cash grants to help pay for books, supplies, and etc.*'
+            embed.description = '***TYPE:***\n**`!fafsa`** --> *To view basic information about the FAFSA*\n\n**`!howToFafsa`** --> *To view a step by step guide on how to submit the FAFSA!*\n\n**`!scholarships`** --> *To view a list of available scholarships*\n\n**`!help`** --> *Please contact the Financial Aid Office if you have any questions regarding your financial aid status!*\n\n**`!info`** --> *To view basic information on how financial aid can cover your tuition costs and send cash grants to help pay for books, supplies, and etc.*\n\n**`!requirements`** --> *To view the requirements needed to qualify for Financial Aid*'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!help':
@@ -74,6 +79,55 @@ async def on_message(message): #on_message means that we take a message as a par
             # FIX & ADD CCC Scholarship link and a file w other scholarships (make embed too)
             await message.channel.send(f'Hello {username}, here are the available scholarships: !')
             return
+        elif user_message.lower() == '!requirements':
+            # Give basic info on FAFSA 
+            embed = discord.Embed() 
+            embed.description = '**__The requirements to qualify for Financial Aid__**\n\n**Academic requirements (SAP):**\n1.) Maintain at least a cumulative GPA of 2.0\n2.) Complete at least 67% for all total units attempted\n Have attempted less than 150% of the max units required for completion of their degree.\n\nFor any questions, use the command `!help` to view how to contact the Financial Aid Office or visit their [website](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/satisfactory-academic-progress.html) for more details on the requirements'
+            await message.channel.send(embed=embed)  
+            return
+
+    # Detail a description of each Grant and how it works!
+    if message.channel.name == 'grants':
+        if user_message.lower() == '!commands':
+            embed = discord.Embed() # makes the message an embed (Looks a lot cleaner)
+            embed.description = '***TYPE:***\n**`!info`** --> *To view information about what Grants are & how they work!*\n\n**`!pell`** --> *To view information about the PELL Grant **(Cash-Grant)** and to see who qualifies!*\n\n**`!cal** --> *To view information about the CalGrant **(Cash-Grant)** and to see who qualifies!*\n\n**`!success`** --> *To view information about the Student Success Completion Grant **(Cash-Grant)** and to see who qualifies!*\n\n`!dates`** --> *To view the upcoming disbursement dates where we send out the grants!*\n\n**`!AB19`** --> *To view information about the AB19 **(Fee-waiver)** and to see who qualifies!*\n\n**`!promise** --> *To view information about the the Promise Grant **(Fee-waiver)** and to see who qualifies!*'
+            await message.channel.send(embed=embed)     
+            return 
+        elif user_message.lower() == '!info':
+            embed = discord.Embed() 
+            embed.description = 'Grants are a form of financial aid that does NOT have to be paid back if a student completes their courses.\n\nA student may only need to re-pay a portion of their grant depending on how many units they dropped and how far into the semester they were before dropping the courses.\n\nIf you have any questions on if you will owe back money for dropping a course, please contact the [Financial Aid Office](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/index.html)'
+            await message.channel.send(embed=embed)     
+            return
+        elif user_message.lower() == '!pell':
+            embed = discord.Embed() 
+            embed.description = 'The [Pell Grant](https://studentaid.gov/understand-aid/types/grants/pell#how-much-money-can-i-get) is federally awarded based on financial need & can be awarded for up to 6 years!\n\n**How much is the Pell Grant?**\nThe maximum amount for the school year 2022-2023 is $6,895, however the amount you receive will vary depending on if you are a full-time student and your Expected Family Contribution (EFC)\n\n**More Info:**\n - *Full-time (At least 12 units)* --> 100% of the Pell Grant you are eligible for\n - *Three-Quarter-time (9 - 11.5 units)* --> 750% of the Pell Grant you are eligible for\n - *Half-time (6 - 8.5)* --> 50% of the Pell Grant you are eligible for\n - *Less than Half-time (3 - 5.5)* --> 25% of the Pell Grant you are eligible for'
+            await message.channel.send(embed=embed)     
+            return 
+        elif user_message.lower() == '!cal':
+            embed = discord.Embed() 
+            embed.description = 'The [Cal Grant](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/cal-grant.html) is a grant that is funded by the state of California & this grant can be awarded for up to 4 years.\n\n**How much is the Cal Grant?**\nThe maximum amount for the school year 2022-2023 is $1,624, however the amount will vary depending if you are a full-time student\n\n**More Info:**\nThe CalGrant A, CalGrant B, CalGrant C...'
+            await message.channel.send(embed=embed)     
+            return 
+        elif user_message.lower() == '!success':
+            embed = discord.Embed() 
+            embed.description = 'The [Student Success Completion Grant](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/cal-grant.html) pays Cal Grant recipients who are *Full-Time Students*!\n\nStudents enrolled in at least 12 but fewer than 15 semester units: **$649 per semester ($1,298 annually)**\n\nCal Grant recipients enrolled in 15 or more semester units: **$2,000 per semester ($4,000 annually)**'
+            await message.channel.send(embed=embed)     
+            return 
+        elif user_message.lower() == '!dates':
+            embed = discord.Embed() 
+            embed.description = 'The [Disbursement Date Calendar](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/financial-aid-disbursement-dates.html) details when you should be receiving your financial aid check.\n\nStudents who have filed their FAFSA and qualify for the Pell Grant will be receiving the first half of their grant on 08/04/22.\nIf you did not receive a grant on this date, then you either did not qualify for the Pell Grant or you your file is incomplete at the Financial Aid Office.\n\n The second disbursement will be the second half of the grant (same amount as the first) and will be disbursed on 10/06/22!'
+            await message.channel.send(embed=embed)     
+            return 
+        elif user_message.lower() == '!AB19':
+            embed = discord.Embed() 
+            embed.description = 'The [AB19 Fee-Waiver](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/financial-aid-disbursement-dates.html) allows first-time college students who are Califormoa residents to pursue two years of college for FREE! Regardless of the Income in the household, any new student can qualify!\nThe student must have the FAFSA already submitted, and the student needs to also be full-time which is at least 12 units.'
+            await message.channel.send(embed=embed)     
+            return 
+        elif user_message.lower() == '!promise':
+            embed = discord.Embed() 
+            embed.description = 'The Promise Grant Fee-Waiver does depend on Financial Need based on the income in the household. However the student does not have to a new-incoming student and can be awarded the Promise Grant Fee-Waiver every year, as long as they submit the FAFSA and qualify! '
+            await message.channel.send(embed=embed)     
+            return 
    # Commands for Clubs is done & Template is made. We just need more clubs!
     if message.channel.name == 'clubs':
         # Important lines of code that shows what the commands are for each channel
@@ -85,10 +139,9 @@ async def on_message(message): #on_message means that we take a message as a par
             return 
         elif user_message.lower() == '!clubs':
             embed = discord.Embed()
-            embed.description = '*List of Available Clubs:*\n**`!amc`** *Active Minds Club:* Particpates in mental health awareness... \n\n**`!asg`** *Associated Student Government:* Represents the voice of the students & is involved with other student organizations \n\n**`!econ`** *Crush Economics:* Attend networking events, Host speaking events with intership recruiters, and participate in a variety of activities.'
+            embed.description = '*List of Available Clubs:*\n**`!amc`** *Active Minds Club:* Particpates in mental health awareness... \n\n**`!asg`** *Associated Student Government:* represents the voice of the students through active representation on campus committees\n\n**`!econ`** *Crush Economics:* Attend networking events, Host speaking events with internship recruiters, and participate in a variety of activities.'
             await message.channel.send(embed=embed)
             return
-
         # List the Steps to make a club!
 
         # List upcoming Club Evemts!
