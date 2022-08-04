@@ -55,37 +55,52 @@ async def on_message(message): #on_message means that we take a message as a par
     if message.channel.name == 'financial-aid':
         if user_message.lower() == '!commands':
             embed = discord.Embed() # makes the message an embed (Looks a lot cleaner)
-            embed.description = '***TYPE:***\n**`!fafsa`** --> *To view basic information about the FAFSA*\n\n**`!howToFafsa`** --> *To view a step by step guide on how to submit the FAFSA!*\n\n**`!scholarships`** --> *To view a list of available scholarships*\n\n**`!help`** --> *Please contact the Financial Aid Office if you have any questions regarding your financial aid status!*\n\n**`!info`** --> *To view basic information on how financial aid can cover your tuition costs and send cash grants to help pay for books, supplies, etc.*\n\n**`!requirements`** --> *To view the requirements needed to qualify for Financial Aid*'
+            embed.description = '***TYPE:***\n**`!info`** --> *To receive an understanding of what financial aid is.*\n\n**`!requirements`** --> *To view the requirements needed to qualify for Financial Aid*\n\n**`!scholarships`** --> *To view a list of available scholarships*\n\n**`!help`** --> *Please contact the Financial Aid Office if you have any questions regarding your financial aid status!*\n\n**__FAFSA:__**\n**`!fafsa`** --> *To view basic information about the FAFSA*\n\n**`!applyFafsa`** --> *To view a step by step guide on how to submit the FAFSA!*\n\n**__CADAA (non-residents):__**\n**`!cadaa`** --> *To view more information on the California DREAM Act!(The CADAA is for non-resident students who are living in California)*\n\n**`!applyCadaa`** --> *To view a step by step guide on how to submit the CADAA!*'
             await message.channel.send(embed=embed)     
             return 
-        elif user_message.lower() == '!help':
-            embed = discord.Embed() 
-            embed.description = 'The **[Financial Aid Office](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/index.html)** is here to provide assitance to all students who need help or have questions regarding their financial aid status\n\n**__Contact Information:__**\n***E-mail:*** clovis.financialaid@cloviscollege.edu\n***Phone:***(559)325-5239\n\n***Location:*** AC2-141\n**__Hours:__** Monday - Friday (8:00AM - 5:00PM)'
-            await message.channel.send(embed=embed)  
-            return
-        # The above 4 lines are needed to send a message in an embed format 
-        elif user_message.lower() == '!fafsa':
-            # Give basic info on FAFSA 
-            embed = discord.Embed() 
-            embed.description = 'The **[FAFSA](https://studentaid.gov/)** 2022 - 2023 is open!\nPlease submit the FAFSA form to see if you qualify for a fee-waiver or cash grants!'
-            await message.channel.send(embed=embed)  
-            return
         elif user_message.lower() == '!info':
             embed = discord.Embed() 
-            embed.description = 'To receive Financial Aid, you must complete the the 2022 - 2023 FAFSA form! This is the only form you need to complete to see if you might qualify for a fee-waiver, Pell Grant, or Cal Grant. This form needs to be renewed every school year, and NOT each semester. '
+            embed.description = 'Financial aid is a government funded resource to help students pay for college. Financial Aid includes scholarships, grants, work-study, and loans.\n\nTo apply for Financial Aid, you need to complete 1 of the 2 forms:\n**1.)** U.S. Resident --> Free Application for Federal Student Aid(FAFSA)\n**2.)** Non U.S. Resident --> California Dream Act Application/(CADAA)\n\nDo **NOT** complete both applications!  '
             await message.channel.send(embed=embed)  
             return
         elif user_message.lower() == '!scholarships':
             # FIX & ADD CCC Scholarship link and a file w other scholarships (make embed too)
             await message.channel.send(f'Hello {username}, here are the available scholarships: !')
             return
+        elif user_message.lower() == '!help':
+            embed = discord.Embed() 
+            embed.description = 'The **[Financial Aid Office](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/index.html)** is here to provide assitance to all students who need help or have questions regarding their financial aid status\n\n**__Contact Information:__**\n***E-mail:*** clovis.financialaid@cloviscollege.edu\n***Phone:***(559)325-5239\n\n***Location:*** AC2-141\n**__Hours:__** Monday - Friday (8:00AM - 5:00PM)'
+            await message.channel.send(embed=embed)  
+            return
+        # The above 4 lines are needed to send a message in an embed format 
         elif user_message.lower() == '!requirements':
             # Give basic info on FAFSA 
             embed = discord.Embed() 
-            embed.description = '**__The requirements to qualify for Financial Aid__**\n\n**Academic requirements (SAP):**\n1.) Maintain at least a cumulative GPA of 2.0\n2.) Complete at least 67% for all total units attempted\n Have attempted less than 150% of the max units required for completion of their degree.\n\nFor any questions, use the command `!help` to view how to contact the Financial Aid Office or visit their [website](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/satisfactory-academic-progress.html) for more details on the requirements'
+            embed.description = 'Students need to meet the three components to the **SAP** policy\n\n**Academic requirements (SAP):**\n1.) Maintain at least a cumulative GPA of 2.0\n2.) Complete at least 67% for all total units attempted\n3.) Have attempted less than 150% of the max units required for completion of their degree.\n\nFor any questions, use the command `!help` to view how to contact the Financial Aid Office or visit their [website](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/satisfactory-academic-progress.html) for more details on the requirements'
             await message.channel.send(embed=embed)  
             return
-
+        elif user_message.lower() == '!fafsa':
+            # Give basic info on FAFSA 
+            embed = discord.Embed() 
+            embed.description = 'The **[FAFSA](https://studentaid.gov/)** 2022 - 2023 is open!\nPlease submit the FAFSA form to see if you qualify for a fee-waiver or cash grants!'
+            await message.channel.send(embed=embed)  
+            return
+        elif user_message.lower() == '!applyfafsa':
+            embed = discord.Embed() 
+            embed.description = 'Follow these [instructions](https://studentaid.gov/articles/steps-to-complete-fafsa-form/) if you are submitting a FAFSA application for the first time!'
+            await message.channel.send(embed=embed)  
+            return
+        elif user_message.lower() == '!cadaa':
+            embed = discord.Embed() 
+            embed.description = 'Undocumented students who meet AB 540 requirements will need to submit the CA Dream Act Application.\n\nThe [CADAA](https://dream.csac.ca.gov/landing) 2022 - 2023 ia open! Please submit the CADAA form to see if you qualify for a fee-waiver or cash grants!'
+            await message.channel.send(embed=embed)  
+            return
+        elif user_message.lower() == '!applycadaa':
+            embed = discord.Embed() 
+            embed.description = 'Follow these [instructions](https://www.csac.ca.gov/how-apply) to submit a CA Dream Act Application\n\n'
+            await message.channel.send(embed=embed)  
+            return
+    
     # Detail a description of each Grant and how it works!
     if message.channel.name == 'grants':
         if user_message.lower() == '!commands':
@@ -95,7 +110,7 @@ async def on_message(message): #on_message means that we take a message as a par
             return 
         elif user_message.lower() == '!info':
             embed = discord.Embed() 
-            embed.description = 'Grants are sources of financial aid that do **NOT** have to be repaid! Grants are directly sent out in a check form to a student via direct deposit or mail.\n\n**How to Apply for a Grant?**\n\nA student needs to submit the [FAFSA 2022 - 2023](https://studentaid.gov/h/apply-for-aid/fafsa) to be eligible for the CalGrant & Pell Grant. The FAFSA is the only application you need to complete to be eligible for these grants! Once the FAFSA is submitted, the system will determine what grants you will be awarded based on the household income.'
+            embed.description = 'Grants are sources of financial aid that do **NOT** have to be repaid! Grants are directly sent out in a check form to a student via direct deposit or mail.\n**How to Apply for a Grant?**\n\nA student needs to submit the [FAFSA 2022 - 2023](https://studentaid.gov/h/apply-for-aid/fafsa) to be eligible for the CalGrant & Pell Grant. The FAFSA is the only application you need to complete to be eligible for these grants! Once the FAFSA is submitted, the system will determine what grants you will be awarded based on the household income.\n\n**'
             await message.channel.send(embed=embed)     
             return
         elif user_message.lower() == '!pell':
@@ -110,7 +125,7 @@ async def on_message(message): #on_message means that we take a message as a par
             return 
         elif user_message.lower() == '!success':
             embed = discord.Embed() 
-            embed.description = 'The [Student Success Completion Grant](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/cal-grant.html) pays Cal Grant recipients who are *Full-Time Students*!\n\nStudents enrolled in at least 12 but fewer than 15 semester units: **$649 per semester ($1,298 annually)**\n\nCal Grant recipients enrolled in 15 or more semester units: **$2,000 per semester ($4,000 annually)**'
+            embed.description = 'The [Student Success Completion Grant](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/cal-grant.html) pays Cal Grant recipients who are *Full-Time Students*!\n\nStudents enrolled in at least 12 but fewer than 15 semester units: **$1,298 per semester ($2,596 annually)**\n\nCal Grant recipients enrolled in 15 or more semester units: **$2,700 per semester ($5,400 annually)**'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!dates':
@@ -120,7 +135,7 @@ async def on_message(message): #on_message means that we take a message as a par
             return 
         elif user_message.lower() == '!ab19':
             embed = discord.Embed() 
-            embed.description = 'The [AB19 Fee-Waiver](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/financial-aid-disbursement-dates.html) allows first-time college students who are California residents to pursue two years of college for FREE! Regardless of the Income in the household, any new student can qualify!\n\n**Requirements**\n1.) The student must have the FAFSA submitted\n2.) The student needs a first-time college student & full-time (at least 12 units)\n3.) California Resident or Non-Resident Exempt'
+            embed.description = 'The [AB19 Fee-Waiver](https://www.cloviscollege.edu/landing/ccc-free-for-first-year.html) allows first-time college students who are California residents to pursue two years of college for FREE! Regardless of the Income in the household, any new student can qualify!\n\n**Requirements**\n1.) The student must have the FAFSA submitted\n2.) The student needs a first-time college student & full-time (at least 12 units)\n3.) California Resident or Non-Resident Exempt'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!promise':
