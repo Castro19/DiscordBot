@@ -69,7 +69,7 @@ async def on_message(message): #on_message means that we take a message as a par
             return
         elif user_message.lower() == '!help':
             embed = discord.Embed() 
-            embed.description = 'The **[Financial Aid Office](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/index.html)** is here to provide assitance to all students who need help or have questions regarding their financial aid status\n\n**__Contact Information:__**\n***E-mail:*** clovis.financialaid@cloviscollege.edu\n***Phone:***(559)325-5239\n\n***Location:*** AC2-141\n**__Hours:__** Monday - Friday (8:00AM - 5:00PM)'
+            embed.description = 'The **[Financial Aid Office](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/index.html)** is here to provide assistance to all students who need help or have questions regarding their financial aid status\n\n**__Contact Information:__**\n***E-mail:*** clovis.financialaid@cloviscollege.edu\n***Phone:***(559)325-5239\n\n***Location:*** AC2-141\n**__Hours:__** Monday - Friday (8:00AM - 5:00PM)'
             await message.channel.send(embed=embed)  
             return
         # The above 4 lines are needed to send a message in an embed format 
@@ -92,7 +92,7 @@ async def on_message(message): #on_message means that we take a message as a par
             return
         elif user_message.lower() == '!cadaa':
             embed = discord.Embed() 
-            embed.description = 'Undocumented students who meet AB 540 requirements will need to submit the CA Dream Act Application.\n\nThe [CADAA](https://dream.csac.ca.gov/landing) 2022 - 2023 ia open! Please submit the CADAA form to see if you qualify for a fee-waiver or cash grants!'
+            embed.description = 'Undocumented students who meet AB 540 requirements will need to submit the CA Dream Act Application.\n\nThe [CADAA](https://dream.csac.ca.gov/landing) 2022 - 2023 is open! Please submit the CADAA form to see if you qualify for a fee-waiver or cash grants!'
             await message.channel.send(embed=embed)  
             return
         elif user_message.lower() == '!applycadaa':
@@ -140,7 +140,7 @@ async def on_message(message): #on_message means that we take a message as a par
             return 
         elif user_message.lower() == '!promise':
             embed = discord.Embed() 
-            embed.description = 'Unlike the AB19 fee-waiver, the Promise Grant Fee-Waiver does depend on Financial Need based on the income in the household.\n\nStudents that qualify for the Promise Grant have their tuiton fees paid automatically!'
+            embed.description = 'Unlike the AB19 fee-waiver, the Promise Grant Fee-Waiver does depend on Financial Need based on the income in the household.\n\nStudents that qualify for the Promise Grant have their tuition fees paid automatically!'
             await message.channel.send(embed=embed)     
             return 
    # Commands for Clubs is done & Template is made. We just need more clubs!
