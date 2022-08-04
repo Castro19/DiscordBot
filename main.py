@@ -1,7 +1,7 @@
 # from pkg_resources import require
 # require('dotenv').config()
 # ^^^ NEEDED to hide API Token
-import discord # Recieve the libraries from Discord
+import discord # receive the libraries from Discord
 import random # Imports randmized Numbers?
 from dotenv import load_dotenv
 import os
@@ -55,7 +55,7 @@ async def on_message(message): #on_message means that we take a message as a par
     if message.channel.name == 'financial-aid':
         if user_message.lower() == '!commands':
             embed = discord.Embed() # makes the message an embed (Looks a lot cleaner)
-            embed.description = '***TYPE:***\n**`!fafsa`** --> *To view basic information about the FAFSA*\n\n**`!howToFafsa`** --> *To view a step by step guide on how to submit the FAFSA!*\n\n**`!scholarships`** --> *To view a list of available scholarships*\n\n**`!help`** --> *Please contact the Financial Aid Office if you have any questions regarding your financial aid status!*\n\n**`!info`** --> *To view basic information on how financial aid can cover your tuition costs and send cash grants to help pay for books, supplies, and etc.*\n\n**`!requirements`** --> *To view the requirements needed to qualify for Financial Aid*'
+            embed.description = '***TYPE:***\n**`!fafsa`** --> *To view basic information about the FAFSA*\n\n**`!howToFafsa`** --> *To view a step by step guide on how to submit the FAFSA!*\n\n**`!scholarships`** --> *To view a list of available scholarships*\n\n**`!help`** --> *Please contact the Financial Aid Office if you have any questions regarding your financial aid status!*\n\n**`!info`** --> *To view basic information on how financial aid can cover your tuition costs and send cash grants to help pay for books, supplies, etc.*\n\n**`!requirements`** --> *To view the requirements needed to qualify for Financial Aid*'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!help':
@@ -90,22 +90,22 @@ async def on_message(message): #on_message means that we take a message as a par
     if message.channel.name == 'grants':
         if user_message.lower() == '!commands':
             embed = discord.Embed() # makes the message an embed (Looks a lot cleaner)
-            embed.description = '***TYPE:***\n**`!info`** --> *To view information about what Grants are & how they work!*\n\n**`!pell`** --> *To view information about the PELL Grant **(Cash-Grant)** and to see who qualifies!*\n\n**`!cal`** --> *To view information about the CalGrant **(Cash-Grant)** and to see who qualifies!*\n\n**`!success`** --> *To view information about the Student Success Completion Grant **(Cash-Grant)** and to see who qualifies!*\n\n**`!dates`** --> *To view the upcoming disbursement dates where we send out the grants!*\n\n**`!AB19`** --> *To view information about the AB19 **(Fee-waiver)** and to see who qualifies!*\n\n**`!promise`** --> *To view information about the the Promise Grant **(Fee-waiver)** and to see who qualifies!*'
+            embed.description = '***TYPE:***\n**`!info`** --> *To view information about what Grants are & how they work!*\n\n**`!dates`** --> *To view the upcoming disbursement dates where we send out the grants!*\n\n**__GRANTS__**\n**`!pell`** --> *To view information about the PELL Grant and how to qualify!*\n\n**`!cal`** --> *To view information about the CalGrant and how to qualify!*\n\n**`!success`** --> *To view information about the Student Success Completion Grant and how to qualify!*\n\n**__FEE-WAIVERS__**\n**`!AB19`** --> *To view information about the AB19 Fee-Waiver and how to qualify!*\n\n**`!promise`** --> *To view information about the the Promise Grant Fee-Waiver and how to qualify!*'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!info':
             embed = discord.Embed() 
-            embed.description = 'Grants are a form of financial aid that does NOT have to be paid back if a student completes their courses.\n\nA student may only need to re-pay a portion of their grant depending on how many units they dropped and how far into the semester they were before dropping the courses.\n\nIf you have any questions on if you will owe back money for dropping a course, please contact the [Financial Aid Office](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/index.html)'
+            embed.description = 'Grants are sources of financial aid that do **NOT** have to be repaid! Grants are directly sent out in a check form to a student via direct deposit or mail.\n\n**How to Apply for a Grant?**\n\nA student needs to submit the [FAFSA 2022 - 2023](https://studentaid.gov/h/apply-for-aid/fafsa) to be eligible for the CalGrant & Pell Grant. The FAFSA is the only application you need to complete to be eligible for these grants! Once the FAFSA is submitted, the system will determine what grants you will be awarded based on the household income.'
             await message.channel.send(embed=embed)     
             return
         elif user_message.lower() == '!pell':
             embed = discord.Embed() 
-            embed.description = 'The [Pell Grant](https://studentaid.gov/understand-aid/types/grants/pell#how-much-money-can-i-get) is federally awarded based on financial need & can be awarded for up to 6 years!\n\n**How much is the Pell Grant?**\nThe maximum amount for the school year 2022-2023 is $6,895, however the amount you receive will vary depending on if you are a full-time student and your Expected Family Contribution (EFC)\n\n**More Info:**\n - *Full-time (At least 12 units)* --> 100% of the Pell Grant you are eligible for\n - *Three-Quarter-time (9 - 11.5 units)* --> 75% of the Pell Grant you are eligible for\n - *Half-time (6 - 8.5)* --> 50% of the Pell Grant you are eligible for\n - *Less than Half-time (3 - 5.5)* --> 25% of the Pell Grant you are eligible for'
+            embed.description = 'The [Pell Grant](https://studentaid.gov/understand-aid/types/grants/pell#how-much-money-can-i-get) is a federal grant awarded based on financial need & can be awarded for up to 6 years!\n\n**How much is the Pell Grant?**\nThe maximum amount for the school year 2022-2023 is $6,895, however, the amount you receive will vary depending on if you are a full-time student and your Expected Family Contribution (EFC)\n\n**More Info:**\n - *Full-time (At least 12 units)* --> 100% of the Pell Grant you are eligible for\n - *Three-Quarter-time (9 - 11.5 units)* --> 75% of the Pell Grant you are eligible for\n - *Half-time (6 - 8.5)* --> 50% of the Pell Grant you are eligible for\n - *Less than Half-time (3 - 5.5)* --> 25% of the Pell Grant you are eligible for'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!cal':
-            embed = discord.Embed() 
-            embed.description = 'The [Cal Grant](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/cal-grant.html) is a grant that is funded by the state of California & this grant can be awarded for up to 4 years.\n\n**How much is the Cal Grant?**\nThe maximum amount for the school year 2022-2023 is $1,624, however the amount will vary depending if you are a full-time student\n\n**More Info:**\nThe CalGrant A, CalGrant B, CalGrant C...'
+            embed = discord.Embed()
+            embed.description = 'The [Cal Grant](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/cal-grant.html) is a grant that is funded by the state of California & this grant can be awarded for up to 4 years.\n\n**How much is the Cal Grant?**\nThe maximum amount for the school year 2022-2023 is $1,624, however the amount will vary depending on if you are a full-time student\n\n**More Info:**\nThe CalGrant A, CalGrant B, CalGrant C...'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!success':
@@ -115,17 +115,17 @@ async def on_message(message): #on_message means that we take a message as a par
             return 
         elif user_message.lower() == '!dates':
             embed = discord.Embed() 
-            embed.description = 'The [Disbursement Date Calendar](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/financial-aid-disbursement-dates.html) details when you should be receiving your financial aid check.\n\nStudents who have filed their FAFSA and qualify for the Pell Grant will be receiving the first half of their grant on 08/04/22.\nIf you did not receive a grant on this date, then you either did not qualify for the Pell Grant or you your file is incomplete at the Financial Aid Office.\n\n The second disbursement will be the second half of the grant (same amount as the first) and will be disbursed on 10/06/22!'
+            embed.description = 'The [Disbursement Date Calendar](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/financial-aid-disbursement-dates.html) details when you should be receiving your financial aid check.\n\nThe Pell Grant is split up and sent to students in two different checks. The first check is sent out before the semester begins, to help pay for books/school supplies. The second check is sent out in the middle of the semester during October for Fall 2022!\n\nThe CalGrant and Student Success Completion Grant are paid together in September.'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!ab19':
             embed = discord.Embed() 
-            embed.description = 'The [AB19 Fee-Waiver](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/financial-aid-disbursement-dates.html) allows first-time college students who are Califormoa residents to pursue two years of college for FREE! Regardless of the Income in the household, any new student can qualify!\nThe student must have the FAFSA already submitted, and the student needs to also be full-time which is at least 12 units.'
+            embed.description = 'The [AB19 Fee-Waiver](https://www.cloviscollege.edu/admissions-and-aid/financial-aid/financial-aid-disbursement-dates.html) allows first-time college students who are California residents to pursue two years of college for FREE! Regardless of the Income in the household, any new student can qualify!\n\n**Requirements**\n1.) The student must have the FAFSA submitted\n2.) The student needs a first-time college student & full-time (at least 12 units)\n3.) California Resident or Non-Resident Exempt'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!promise':
             embed = discord.Embed() 
-            embed.description = 'The Promise Grant Fee-Waiver does depend on Financial Need based on the income in the household. However the student does not have to a new-incoming student and can be awarded the Promise Grant Fee-Waiver every year, as long as they submit the FAFSA and qualify! '
+            embed.description = 'Unlike the AB19 fee-waiver, the Promise Grant Fee-Waiver does depend on Financial Need based on the income in the household.\n\nStudents that qualify for the Promise Grant have their tuiton fees paid automatically!'
             await message.channel.send(embed=embed)     
             return 
    # Commands for Clubs is done & Template is made. We just need more clubs!
@@ -134,7 +134,7 @@ async def on_message(message): #on_message means that we take a message as a par
         if user_message.lower() == '!commands':
             embed = discord.Embed() # makes the message an embed (Looks a lot cleaner)
             embed.description = '***TYPE:***\n**`!clubs`** --> *To view a list of all available clubs!*'
-            # \n\n**`!make`** --> *To view a step by step guide on how to make a club*\n\n**`!events`** --> *To view upcoming club events, rushes, and etc.*'
+            # \n\n**`!make`** --> *To view a step by step guide on how to make a club*\n\n**`!events`** --> *To view upcoming club events, rushes, etc.*'
             await message.channel.send(embed=embed)     
             return 
         elif user_message.lower() == '!clubs':
@@ -188,22 +188,22 @@ async def on_message(message): #on_message means that we take a message as a par
     if message.channel.name == 'resources':
         if user_message.lower() == '!commands':
             embed = discord.Embed()
-            embed.description = '***TYPE:***\n**`!career`** --> *To receive information from our Career Counselors on the skills necessary to find a job!*\n\n**`!counseling`** --> *To recieve information on how to contact a counselor*\n\n**`!tech`** --> *To receive information on how to checkout a laptop, calculator, etc.*\n\n**`!tutorial`** --> *To recieve information on how to access our tutorial center where we provide free tutoring!*\n\n**`!activities`** --> *To view details on our student center and how to participate in extracurricular activities.*\n\n**`!health`** --> *Provides students with resources to help their mental/physical health*\n\n**`!pantry`** --> To view the details of our free food programs for all students!' 
+            embed.description = '***TYPE:***\n**`!career`** --> *To receive information from our Career Counselors on the skills necessary to find a job!*\n\n**`!counseling`** --> *To receive information on how to contact a counselor*\n\n**`!tech`** --> *To receive information on how to check out a laptop, calculator, etc.*\n\n**`!tutorial`** --> *To receive information on how to access our tutorial center where we provide free tutoring!*\n\n**`!activities`** --> *To view details on our student center and how to participate in extracurricular activities.*\n\n**`!health`** --> *Provides students with resources to help their mental/physical health*\n\n**`!pantry`** --> To view the details of our free food programs for all students!' 
             await message.channel.send(embed=embed)
             return
         elif user_message.lower() == '!career':
             embed = discord.Embed()
-            embed.description = 'The **[Career Center](https://www.cloviscollege.edu/student-services/career-services/index.html)** is here to help you with the career and major exploration process as well as gaining all the skills necessary to find a job in your chosen pathway.\n\n**__Contact Information:__**\n***E-mail:*** careercenter@cloviscollege.edu\n***Phone:*** (559)325-5398\n***Location:*** AC2-174\n\n**__Hours:__**\nMonday - Thursday (9:00AM - 6:00PM)\nFriday (9:00AM - 5:00PM)'
+            embed.description = 'The **[Career Center](https://www.cloviscollege.edu/student-services/career-services/index.html)** is here to help you with the career and major exploration process. Our career counselors will help you gain all the skills necessary to find a job in your chosen pathway.\n\n**__Contact Information:__**\n***E-mail:*** careercenter@cloviscollege.edu\n***Phone:*** (559)325-5398\n***Location:*** AC2-174\n\n**__Hours:__**\nMonday - Thursday (9:00AM - 6:00PM)\nFriday (9:00AM - 5:00PM)'
             await message.channel.send(embed=embed)
             return
         elif user_message.lower() == '!counseling':
             embed = discord.Embed()
-            embed.description = 'The **[Counseling Center](https://www.cloviscollege.edu/student-services/academic-counseling/index.html)** provide comprehensive counseling services to assist students toward a successful college experience\n\n**__Contact Information:__**\n***E-mail:*** cccounseling@cloviscollege.edu\n***Phone:*** (559)325-5230\n***Location:*** AC2-133\n\n**__Hours:__**\nMonday - Thursday (8:00AM - 6:00PM)\nFriday (8:00AM - 5:00PM)'
+            embed.description = 'The **[Counseling Center](https://www.cloviscollege.edu/student-services/academic-counseling/index.html)** provides comprehensive counseling services to assist students toward a successful college experience\n\n**__Contact Information:__**\n***E-mail:*** cccounseling@cloviscollege.edu\n***Phone:*** (559)325-5230\n***Location:*** AC2-133\n\n**__Hours:__**\nMonday - Thursday (8:00AM - 6:00PM)\nFriday (8:00AM - 5:00PM)'
             await message.channel.send(embed=embed)
             return
         elif user_message.lower() == '!tech':
             embed = discord.Embed()
-            embed.description = 'The **[Technology Checkout Program](https://www.cloviscollege.edu/student-services/library/technology-loan-program.html)** allows students who are enrolled in CCC classes to check out laptops, webcams, personal hotspots, calculators, headphones, and etc from the Library\n\n**__Contact Information:__**\n***E-mail:*** library@cloviscollege.edu\n***Phone:***(559)325-5215\n***Location:*** AC2-148'
+            embed.description = 'The **[Technology Checkout Program](https://www.cloviscollege.edu/student-services/library/technology-loan-program.html)** allows students who are enrolled in CCC classes to check out laptops, webcams, personal hotspots, calculators, headphones, etc from the Library\n\n**__Contact Information:__**\n***E-mail:*** library@cloviscollege.edu\n***Phone:***(559)325-5215\n***Location:*** AC2-148'
             await message.channel.send(embed=embed)
             return 
         elif user_message.lower() == '!tutorial':
@@ -213,12 +213,12 @@ async def on_message(message): #on_message means that we take a message as a par
             return 
         elif user_message.lower() == '!activities':
             embed = discord.Embed()
-            embed.description = '**[Student Activities](https://www.cloviscollege.edu/campus-life/student-center.html)** gives students opportunities to expand your horizons through social and extracurricular activities.\n\n**__Contact Information:__**\n***E-mail:***cccstudentcenter@cloviscollege.edu\n***Phone:*** 559-325-5235\n***Location:*** AC1-160\n\n**__Hours:__**\nMonday - Thursday (8:00AM - 5:00PM)\nFriday (9:00AM - 4:00PM)'
+            embed.description = '**[Student Activities](https://www.cloviscollege.edu/campus-life/student-center.html)** gives students opportunities to expand their horizons through social and extracurricular activities.\n\n**__Contact Information:__**\n***E-mail:***cccstudentcenter@cloviscollege.edu\n***Phone:*** 559-325-5235\n***Location:*** AC1-160\n\n**__Hours:__**\nMonday - Thursday (8:00AM - 5:00PM)\nFriday (9:00AM - 4:00PM)'
             await message.channel.send(embed=embed)
             return    
         elif user_message.lower() == '!health':
             embed = discord.Embed()
-            embed.description = 'The **[Health Services](https://www.cloviscollege.edu/student-services/health-services/index.html)** provides students with clinical health services such as blood pressure checks, height, weight, body fat, BMI measures, and etc.\n **Location:**\nAC1-2??\n\nThe **[Psychological Services](https://www.cloviscollege.edu/student-services/health-services/psychological-services-for-students.html)** is offering free individual therapy to SCCCD students via phone or Zoom meetings.\n**__Contact Information:__**\n***E-mail:*** PsychServices@SCCCD.edu\n***Phone:***559-325-5377\n\n**__Hours:__**\nMonday - Friday (8:00AM - 5:00PM)'
+            embed.description = 'The **[Health Services](https://www.cloviscollege.edu/student-services/health-services/index.html)** provides students with clinical health services such as blood pressure checks, height, weight, body fat, BMI measures, etc.\n **Location:**\nAC1-2??\n\nThe **[Psychological Services](https://www.cloviscollege.edu/student-services/health-services/psychological-services-for-students.html)** is offering free individual therapy to SCCCD students via phone or Zoom meetings.\n**__Contact Information:__**\n***E-mail:*** PsychServices@SCCCD.edu\n***Phone:***559-325-5377\n\n**__Hours:__**\nMonday - Friday (8:00AM - 5:00PM)'
             await message.channel.send(embed=embed)
             return
         elif user_message.lower() == '!honors':
