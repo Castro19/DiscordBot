@@ -154,14 +154,42 @@ async def on_message(message): #on_message means that we take a message as a par
             return 
         elif user_message.lower() == '!clubs':
             embed = discord.Embed()
-            embed.description = '*List of Available Clubs:*\n**`!amc`** *Active Minds Club:* Particpates in mental health awareness... \n\n**`!asg`** *Associated Student Government:* represents the voice of the students through active representation on campus committees\n\n**`!econ`** *Crush Economics:* Attend networking events, Host speaking events with internship recruiters, and participate in a variety of activities.'
+            # **`!amc`** *Active Minds Club:* Particpates in mental health awareness... \n\n
+            embed.description = '*List of Available Clubs:*\n**`!asg`** *Associated Student Government:* represents the voice of the students through active representation on campus committees\n\n**`!econ`** *Crush Economics:* Attend networking events, Host speaking events with internship recruiters, and participate in a variety of activities.'
             await message.channel.send(embed=embed)
             return
         # List the Steps to make a club!
 
         # List upcoming Club Evemts!
-
+        
         # ALL OF OUR CLUBS:
+        elif user_message.lower() == '!asg':
+            embed = discord.Embed()
+            embed.description = "*The Associated Student Government* **[ASG](https://www.cloviscollege.edu/campus-life/clubs-organizations/associated-student-government.html)** sts events throughout the year such as Week of Welcome, Mexican Independence Day, and Fall Harvest Festival. In addition to hosting events, the ASG is very involved with participating in campus-wide events such as Patriot Day, Rocktoberfest, and Spring Extravaganza. \n\n**__Contact Information:__**\n***Phone:*** (559)325-5235\n***E-mail:*** cccasg@cloviscollege.edu\n***Location:*** Student Center, *AC1-160*\n\nTo *Join ASG,* please send an E-mail to ..."
+            await message.channel.send(embed=embed)
+            # embed.description = "The next meeting for the Associated Student Government is..."
+            # file = discord.File("crush.png")
+            # await message.author.send(embed=embed, file = file)
+            return
+        elif user_message.lower() == '!econ':
+            embed = discord.Embed()
+            embed.description = 'The **[Crush Economics Club](https://www.cloviscollege.edu/campus-life/clubs-organizations/economic-club.html)** attends networking events, hosts speaking events with anyone from internship recruiters to financial advisors, and we do a variety of activities that are designed to improve resume quality and transferability for students from a variety of majors.\n\n**__Contact Information:__**\n***Advisor E-mail:*** sandy.brown@cloviscollege.edu\n***E-mail:*** crusheconccc@gmail.com\n***Location:*** On Zoom\n\nTo *Join Econ Crush,* please send an E-mail!'
+            await message.channel.send(embed=embed)
+            # embed.description = "The next meeting for the Crush Economics Club is..."
+            # await message.author.send(embed=embed)
+            return
+        ''' CLUB TEMPLATE: 
+        elif user_message.lower() == '!CLUB CODENAME':
+            embed = discord.Embed()
+            embed.description = "The **[CLUB NAME](CLUB URL)** is the... \n\n**__Contact Information:__**\n***Phone:***(559)123-4567\n***E-mail:*** ccc@cloviscollege.edu\n***Location:*** Student Center, *AC1-160*\n\nTo *Join CLUB NAME,* please send an E-mail to ..."
+            await message.channel.send(embed=embed)
+            
+# This is the DM sent out to the user which informs them of the NEXT MEETING:
+            embed.description = "The next meeting for the Crush Economics Club is..."
+            await message.author.send(embed=embed)
+            return
+        '''
+        '''
         elif user_message.lower() == '!amc':
             embed = discord.Embed()
             embed.description = 'The **[Active Minds Club](https://www.cloviscollege.edu/campus-life/clubs-organizations/active-minds.html)** is the... \n\n**__Contact Information:__**\n***Advisor E-mail:*** naomi.forey@cloviscollege.edu\n***E-mail:*** @gmail.com\n***Location:*** On Zoom\n\nTo *Join the Active Minds Club* please send an E-mail to ...'
@@ -171,39 +199,13 @@ async def on_message(message): #on_message means that we take a message as a par
             # I get a terminal error message bc of the DM. But it doesn't break the bot, so probably fine to ignore
             await message.author.send(embed=embed)
             return
-        elif user_message.lower() == '!asg':
-            embed = discord.Embed()
-            embed.description = "*The Associated Student Government* **[ASG](https://www.cloviscollege.edu/campus-life/clubs-organizations/associated-student-government.html)** is the... \n\n**__Contact Information:__**\n***Phone:*** (559)325-5235\n***E-mail:*** cccasg@cloviscollege.edu\n***Location:*** Student Center, *AC1-160*\n\nTo *Join ASG,* please send an E-mail to ..."
-            await message.channel.send(embed=embed)
-            embed.description = "The next meeting for the Associated Student Government is..."
-            file = discord.File("crush.png")
-            await message.author.send(embed=embed, file = file)
-            return
-        elif user_message.lower() == '!econ':
-            embed = discord.Embed()
-            embed.description = 'The **[Crush Economics Club](https://www.cloviscollege.edu/campus-life/clubs-organizations/economic-club.html)** is...\n\n**__Contact Information:__**\n***Advisor E-mail:*** sandy.brown@cloviscollege.edu\n***E-mail:*** crusheconccc@gmail.com\n***Location:*** On Zoom\n\nTo *Join Econ Crush,* please send an E-mail to ...\nHere is a Flyer:'
-            # ??? How to add this file into our embeded message file = discord.File('crush_econ.heic')) ???
-            await message.channel.send(embed=embed)
-            embed.description = "The next meeting for the Crush Economics Club is..."
-            await message.author.send(embed=embed)
-            return
-        ''' CLUB TEMPLATE: 
-        elif user_message.lower() == '!CLUB CODENAME':
-            embed = discord.Embed()
-            embed.description = "The **[CLUB NAME](CLUB URL)** is the... \n\n**__Contact Information:__**\n***Phone:***(559)123-4567\n***E-mail:*** ccc@cloviscollege.edu\n***Location:*** Student Center, *AC1-160*\n\nTo *Join CLUB NAME,* please send an E-mail to ..."
-            await message.channel.send(embed=embed)
-    
-# This is the DM sent out to the user which informs them of the NEXT MEETING:
-            embed.description = "The next meeting for the Crush Economics Club is..."
-            await message.author.send(embed=embed)
-            return
         '''
     
     # Need More Ideas on what Commands Resources should have:
     if message.channel.name == 'resources':
         if user_message.lower() == '!commands':
             embed = discord.Embed()
-            embed.description = '***TYPE:***\n**`!career`** --> *To receive information from our Career Counselors on the skills necessary to find a job!*\n\n**`!counseling`** --> *To receive information on how to contact a counselor*\n\n**`!tech`** --> *To receive information on how to check out a laptop, calculator, etc.*\n\n**`!tutorial`** --> *To receive information on how to access our tutorial center where we provide free tutoring!*\n\n**`!activities`** --> *To view details on our student center and how to participate in extracurricular activities.*\n\n**`!health`** --> *Provides students with resources to help their mental/physical health*\n\n**`!pantry`** --> To view the details of our free food programs for all students!' 
+            embed.description = '***TYPE:***\n**`!activities`** --> *To view details on our student center and how to participate in extracurricular activities.*\n\n**`!career`** --> *To receive information from our Career Counselors on the skills necessary to find a job!*\n\n**`!counseling`** --> *To receive information on how to contact a counselor*\n\n**`!health`** --> *Provides students with resources to help their mental/physical health*\n\n**`!honors`** --> *To receive information on how to participate in the Honors Program at CCC!*\n\n**`!pantry`** --> To view the details of our free food programs for all students!\n\n**`!tech`** --> *To receive information on how to check out a laptop, calculator, etc.*\n\n**`!tutorial`** --> *To receive information on how to access our tutorial center where we provide free tutoring!*' 
             await message.channel.send(embed=embed)
             return
         elif user_message.lower() == '!career':
@@ -238,7 +240,7 @@ async def on_message(message): #on_message means that we take a message as a par
             return
         elif user_message.lower() == '!honors':
             embed = discord.Embed()
-            embed.description = 'The **[Leon S. Peters Honors Program](https://www.cloviscollege.edu/student-services/student-support-programs/honors-program.html)** '
+            embed.description = 'The **[Leon S. Peters Honors Program](https://www.cloviscollege.edu/student-services/student-support-programs/honors-program.html)** offers an enhanced educational experience designed to challenge students with a specially selected curriculum.\n\n**__ELIGIBILITY CRITERIA__**\n - Cumulative GPA of 3.5\n - Students must have earned a high school diploma or a GED at the time of starting the honors program.\n - Completed SCCCD College Instructor Recommendation Form\n\n**__Contact Information:__**\n***E-mail:*** tasha.hutchings@scccd.edu\n***Phone:*** (559)325-5304'
             await message.channel.send(embed=embed)
             return
         elif user_message.lower() == '!pantry':
