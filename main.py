@@ -165,7 +165,7 @@ async def on_message(message): #on_message means that we take a message as a par
         # ALL OF OUR CLUBS:
         elif user_message.lower() == '!asg':
             embed = discord.Embed()
-            embed.description = "*The Associated Student Government* **[ASG](https://www.cloviscollege.edu/campus-life/clubs-organizations/associated-student-government.html)** sts events throughout the year such as Week of Welcome, Mexican Independence Day, and Fall Harvest Festival. In addition to hosting events, the ASG is very involved with participating in campus-wide events such as Patriot Day, Rocktoberfest, and Spring Extravaganza. \n\n**__Contact Information:__**\n***Phone:*** (559)325-5235\n***E-mail:*** cccasg@cloviscollege.edu\n***Location:*** Student Center, *AC1-160*\n\nTo *Join ASG,* please send an E-mail to ..."
+            embed.description = "*The Associated Student Government* **[ASG](https://www.cloviscollege.edu/campus-life/clubs-organizations/associated-student-government.html)** hosts events throughout the year such as Week of Welcome, Mexican Independence Day, and Fall Harvest Festival. In addition to hosting events, the ASG is very involved with participating in campus-wide events such as Patriot Day, Rocktoberfest, and Spring Extravaganza. \n\n**__Contact Information:__**\n***Phone:*** (559)325-5235\n***E-mail:*** cccasg@cloviscollege.edu\n***Location:*** Student Center, *AC1-160*\n\nTo *Join ASG,* please send an E-mail!"
             await message.channel.send(embed=embed)
             # embed.description = "The next meeting for the Associated Student Government is..."
             # file = discord.File("crush.png")
